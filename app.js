@@ -1,5 +1,6 @@
 'use strict';
 const koa = require('koa');
+const views = require('koa-views');
 const replier = require('./lib/replier');
 const predefine = require('./lib/predefine');
 
@@ -12,8 +13,15 @@ const PREDEF_REG = /^\/predefined\/(\w+)$/;
  */
 module.exports = function (host, port) {
     const app = koa();
+    app.use(views(__dirname + '/view', {
+        map: {
+            html: 'handlebars'
+        }
+    }));
     app.use(function *(next) {
-        if (this.path === '/response') {
+        if (this.path === '/') {
+            this.redirect('/builder');
+        } else if (this.path === '/response') {
             const config = replier.resolve(this);
             if (this) {
                 yield replier.generate(this, config);
@@ -29,10 +37,12 @@ module.exports = function (host, port) {
             let matched = this.path.match(PREDEF_REG);
             matched = matched[1];
             yield predefine.fetch(this, matched);
+        } else if (this.path === '/builder') {
+            yield this.render('builder');
         }
         yield next;
     });
-    app.use(require('koa-static')('./public'));
+    app.use(require('koa-static')('./dist'));
     app.listen(port, host);
     return app;
 };
