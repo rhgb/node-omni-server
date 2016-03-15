@@ -1,0 +1,15 @@
+{
+    "status": 200,
+    "content": "",
+    "setCookies": [
+        ["token", "dGVzdAo=", {
+            "path": "/",
+            "maxAge": 1000
+        }]
+    ],
+    "clearCookies": ["poc"],
+    "headers": [
+        ["Cache-Control", "no-cache"]
+    ],
+    "latency": 200
+}

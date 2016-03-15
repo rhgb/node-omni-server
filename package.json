@@ -11,6 +11,7 @@
     "response"
   ],
   "main": "app.js",
+  "bin": "./cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,7 +29,11 @@
   },
   "homepage": "https://github.com/rhgb/node-omni-server#readme",
   "dependencies": {
+    "co": "^4.6.0",
+    "debug": "^2.2.0",
+    "json-uri": "^0.1.0",
     "koa": "^1.2.0",
-    "koa-router": "^5.4.0"
+    "koa-static": "^2.0.0",
+    "minimist": "^1.2.0"
   }
 }
