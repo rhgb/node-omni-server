@@ -1,11 +1,28 @@
 'use strict';
 const React = require('react');
 const ReactDom = require('react-dom');
-const ConfigBuilder = require('./components/config-builder');
+const { createStore, applyMiddleware } = require('redux');
+const Provider = require('react-redux').Provider;
+const promiseMiddleware = require('redux-promise');
+
+const ConfigBuilderApp = require('./components/config-builder-app');
+const reducer = require('./reducers');
 
 require('./style.less');
 
+let store = createStore(reducer, {
+    config: {
+        raw: '',
+        encoded: '',
+        isValid: false
+    },
+    mockUrl: '',
+    persistentUrl: ''
+}, applyMiddleware(promiseMiddleware));
+
 ReactDom.render(
-    <ConfigBuilder />,
+    <Provider store={store}>
+        <ConfigBuilderApp />
+    </Provider>,
     document.getElementById('content')
 );
