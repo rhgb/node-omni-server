@@ -1,5 +1,6 @@
 'use strict';
 const koa = require('koa');
+const compress = require('koa-compress');
 const views = require('koa-views');
 const replier = require('./lib/replier');
 const predefine = require('./lib/predefine');
@@ -13,6 +14,7 @@ const PREDEF_REG = /^\/predefined\/(\w+)$/;
  */
 module.exports = function (host, port) {
     const app = koa();
+    app.use(compress());
     app.use(views(__dirname + '/view', {
         map: {
             html: 'handlebars'
