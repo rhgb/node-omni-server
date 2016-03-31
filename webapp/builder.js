@@ -8,6 +8,7 @@ const promiseMiddleware = require('redux-promise');
 const ConfigBuilderApp = require('./components/config-builder-app');
 const reducer = require('./reducers');
 
+require('bootstrap/dist/css/bootstrap.min.css');
 require('./style.less');
 
 let store = createStore(reducer, {
