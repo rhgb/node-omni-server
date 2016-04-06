@@ -3,8 +3,13 @@
     "content": "",
     "setCookies": [
         ["token", "dGVzdAo=", {
+            "domain": "",
             "path": "/",
-            "maxAge": 1000
+            "expires": "",
+            "maxAge": 1000,
+            "secure": true,
+            "httpOnly": true,
+            "firstPartyOnly": true
         }]
     ],
     "clearCookies": ["poc"],

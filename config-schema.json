@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "status": {
+      "id": "status",
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 600,
+      "exclusiveMaximum": true
+    },
+    "content": {
+      "id": "content",
+      "type": "string"
+    },
+    "setCookies": {
+      "id": "setCookies",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "additionalItems": false,
+        "items": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "domain": {
+                "id": "domain",
+                "type": "string"
+              },
+              "path": {
+                "id": "path",
+                "type": "string"
+              },
+              "expires": {
+                "id": "expires",
+                "type": "string"
+              },
+              "maxAge": {
+                "id": "maxAge",
+                "type": "integer"
+              },
+              "secure": {
+                "id": "secure",
+                "type": "boolean"
+              },
+              "httpOnly": {
+                "id": "httpOnly",
+                "type": "boolean"
+              },
+              "firstPartyOnly": {
+                "id": "firstPartyOnly",
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "clearCookies": {
+      "id": "clearCookies",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "headers": {
+      "id": "headers",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "additionalItems": false,
+        "items": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "latency": {
+      "id": "latency",
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
