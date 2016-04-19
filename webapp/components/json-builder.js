@@ -1,6 +1,6 @@
 'use strict';
 const React = require('react');
-const JsonForm = require('./json-form');
+import JsonForm from './json-form';
 const JsonInput = require('./json-input');
 
 function parseJSON(str) {
