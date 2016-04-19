@@ -4,6 +4,7 @@ const ConfigBuilder = require('./config-builder');
 const actions = require('../actions');
 
 const mapStateToProps = state => ({
+    configStr: state.config.raw,
     configEncoded: state.config.encoded,
     mockUrl: state.mockUrl,
     persistentUrl: state.persistentUrl

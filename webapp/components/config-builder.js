@@ -5,7 +5,7 @@ const UrlDisplay = require('./url-display');
 
 module.exports = props => (
     <div>
-        <JsonBuilder onContentChange={(value) => props.onConfigInput(value)}/>
+        <JsonBuilder value={props.configStr} onContentChange={(value) => props.onConfigInput(value)}/>
         <UrlDisplay href={props.mockUrl}/>
         <button type="button" onClick={() => props.requestPersistentURL()}>生成持久URL</button>
         <UrlDisplay href={props.persistentUrl}/>

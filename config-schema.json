@@ -21,12 +21,15 @@
         "additionalItems": false,
         "items": [
           {
+            "title": "name",
             "type": "string"
           },
           {
+            "title": "value",
             "type": "string"
           },
           {
+            "title": "options",
             "type": "object",
             "properties": {
               "domain": {
@@ -77,9 +80,11 @@
         "additionalItems": false,
         "items": [
           {
+            "title": "name",
             "type": "string"
           },
           {
+            "title": "value",
             "type": "string"
           }
         ]
@@ -87,8 +92,7 @@
     },
     "latency": {
       "id": "latency",
-      "type": "integer",
-      "default": 0
+      "type": "integer"
     }
   }
 }

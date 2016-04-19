@@ -3,9 +3,17 @@ const React = require('react');
 const JsonForm = require('./json-form');
 const JsonInput = require('./json-input');
 
-module.exports = props => (
+function parseJSON(str) {
+    let res;
+    try {
+        res = JSON.parse(str);
+    } catch(e) {}
+    return res;
+}
+
+module.exports = ({value, onContentChange}) => (
     <div className="json-builder">
-        <JsonForm onChange={e=>console.log(e)} />
-        <JsonInput onChange={props.onContentChange} />
+        <JsonForm formData={parseJSON(value)} onChange={onContentChange} />
+        <JsonInput value={value} onChange={onContentChange} />
     </div>
 );

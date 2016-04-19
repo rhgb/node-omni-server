@@ -2,7 +2,7 @@
 const webpack = require('webpack');
 module.exports = {
     context: __dirname + '/webapp',
-    entry: './builder',
+    entry: ['./style.less', './builder'],
     output: {
         path: __dirname + '/dist',
         filename: 'bundle.min.js'

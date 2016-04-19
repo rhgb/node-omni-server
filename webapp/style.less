@@ -1,11 +1,20 @@
+@import "~bootstrap/less/bootstrap";
+
 @font-monospace: "Consolas", "Menlo", "Courier", monospace;
 body {
-    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
+.json-builder {
+    display: flex;
+    flex-direction: row;
+}
+.json-form {
+    flex: 1 1 auto;
+    margin-right: 10px;
+}
 .json-input {
-    width: 100%;
+    flex: 1 1 auto;
     height: 400px;
     box-sizing: border-box;
     font-family: @font-monospace;

@@ -1,8 +1,9 @@
 'use strict';
 const React = require('react');
 
-module.exports = ({onChange}) => (
+module.exports = ({value, onChange}) => (
         <textarea className="json-input"
                   placeholder="Config JSON"
+                  value={value}
                   onChange={e=>onChange(e.target.value)}/>
     );
